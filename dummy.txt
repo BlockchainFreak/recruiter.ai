@@ -1,0 +1,18 @@
+import { connect } from '@planetscale/database'
+
+// database main
+const config = {
+  host: 'aws.connect.psdb.cloud',
+  username: 'pufel9ntxlgnqv8wx6g1',
+  password: 'pscale_pw_Q0qQt8rzhM7N6NCQG05EDyXZhTGTgsWT0FnqyXFckmF'
+}
+
+const conn = connect(config)
+const results = await conn.execute('select 1 from dual where 1=?', [1])
+
+
+// prisma
+datasource db {
+  provider = "mysql"
+  url = "mysql://pufel9ntxlgnqv8wx6g1:pscale_pw_Q0qQt8rzhM7N6NCQG05EDyXZhTGTgsWT0FnqyXFckmF@aws.connect.psdb.cloud/main?sslaccept=strict"
+}
