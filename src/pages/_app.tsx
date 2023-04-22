@@ -15,8 +15,8 @@ export default function App({ Component, pageProps }: AppProps) {
     <RecoilRoot>
       <MantineProvider>
         <div>
-          <div className='fixed top-0 w-full z-50'>
-          <Header links={links} />
+          <div className='fixed top-0 w-full z-50 border h-0 border-black'>
+            <Header links={links} />
           </div>
           <div className='mt-16'>
             <Component {...pageProps} />
