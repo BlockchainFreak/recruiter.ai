@@ -1,4 +1,7 @@
 import { atom, selector } from 'recoil';
+import { FileWithPath } from '@mantine/dropzone';
+import { FileLite } from '@/types';
+
 
 export type APIKEYS = {
     openai: string,
@@ -33,4 +36,32 @@ export const pineconeApiKeyState = selector({
             pinecone: newValue,
         }))
     }
+})
+
+export const droppedFilesState = atom({
+    key: 'droppedFiles',
+    default: [] as FileWithPath[],
+})
+
+export const processedFilesState = atom({
+    key: 'processedFiles',
+    default: [] as FileLite[],
+})
+
+export const temperatureState = atom({
+    key: 'temperature',
+    default: 0.7,
+})
+
+export const maxTokenLimitState = atom({
+    key: 'maxTokens',
+    default: 1024,
+})
+
+export const settingsState = selector({
+    key: 'settingsState',
+    get: ({ get }) => ({
+        temperature: get(temperatureState),
+        maxTokenLimit: get(maxTokenLimitState),
+    }),
 })
