@@ -1,7 +1,7 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
 # special file: one time push to github
-src/lib/gptEncoder.ts
+# src/lib/gptEncoder.ts
 
 # dependencies
 /node_modules
