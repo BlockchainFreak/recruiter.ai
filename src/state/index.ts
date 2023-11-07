@@ -50,12 +50,12 @@ export const processedFilesState = atom({
 
 export const temperatureState = atom({
     key: 'temperature',
-    default: 0.7,
+    default: 0.2,
 })
 
 export const maxTokenLimitState = atom({
     key: 'maxTokens',
-    default: 1024,
+    default: 2000,
 })
 
 export const settingsState = selector({

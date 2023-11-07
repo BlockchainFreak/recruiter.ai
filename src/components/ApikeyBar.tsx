@@ -67,14 +67,14 @@ export default function ApikeyBar() {
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
-    const get = async () => {
-        const embedding_usage = await db.getUsage({ queries: { model: "embeddings" } })
-        const chat_usage = await db.getUsage({ queries: { model: "gpt-3.5" } })
-        console.log({ embeddings: embedding_usage, chat: chat_usage })
-        setUsage({ embeddings: embedding_usage, chat: chat_usage })
-    }
+    // const get = async () => {
+    //     const embedding_usage = await db.getUsage({ queries: { model: "embeddings" } })
+    //     const chat_usage = await db.getUsage({ queries: { model: "gpt-3.5" } })
+    //     console.log({ embeddings: embedding_usage, chat: chat_usage })
+    //     setUsage({ embeddings: embedding_usage, chat: chat_usage })
+    // }
 
-    useEffect(() => { get() }, [])
+    // useEffect(() => { get() }, [])
 
 
     return (
@@ -107,15 +107,15 @@ export default function ApikeyBar() {
                         >
                             Validate Keys
                         </Button>
-                        <ActionIcon
+                        {/* <ActionIcon
                             variant='light'
                             onClick={get}
                             color='blue'
                         >
                             <IconReload color='black' />
-                        </ActionIcon>
+                        </ActionIcon> */}
                     </Flex>
-                    <Stack>
+                    {/* <Stack>
                         <strong>Embeddings:</strong>
                         <p>Tokens: {usage?.embeddings.totalTokens}</p>
                         <p>Requests: {usage?.embeddings.totalRequests}</p>
@@ -130,7 +130,7 @@ export default function ApikeyBar() {
                         <p>Requests: {usage?.chat.totalRequests}</p>
                         <p>Price Per 1000 Token: $0.0004</p>
                         <p>Usage: ${((usage?.chat.totalTokens ?? 0) * 0.002 / 1000).toFixed(5)}</p>
-                    </Stack>
+                    </Stack> */}
                 </Flex>
             </Drawer>
             <Button

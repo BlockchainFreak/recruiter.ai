@@ -23,7 +23,7 @@ export default async function streamChat({ apiKey, temperature, maxTokens, appen
         const stream = await OpenAI(
             "chat",
             {
-                model: "gpt-3.5-turbo",
+                model: "gpt-4-1106-preview",
                 messages,
                 temperature: temperature ?? 0.7,
                 max_tokens: maxTokens ?? 4100,
@@ -38,14 +38,14 @@ export default async function streamChat({ apiKey, temperature, maxTokens, appen
             ++completionTokens;
         }
 
-        const { success } = await db.updateUsage({
-            model: "gpt-3.5",
-            promptTokens,
-            completionTokens,
-        });
-        if(success === false) {
-            throw new Error(`Unable to update usage.`)
-        }
+        // const { success } = await db.updateUsage({
+        //     model: "gpt-3.5",
+        //     promptTokens,
+        //     completionTokens,
+        // });
+        // if(success === false) {
+        //     throw new Error(`Unable to update usage.`)
+        // }
     } catch (e) {
         onError(e)
     }
